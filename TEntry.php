@@ -1,5 +1,5 @@
 <?php
- include_once 'TField.php';
+include_once 'TField.php';
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -11,9 +11,11 @@
  *
  * @author marca
  */
-class TEntry extends TField {
+class TEntry extends TField
+{
 
-    public function show() {
+    public function show()
+    {
         // atribui as propriedades da TAG
         $this->tag->name = $this->name; // nome da TAG
         $this->tag->value = $this->value; // valor da TAG

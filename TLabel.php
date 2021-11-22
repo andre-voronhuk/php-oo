@@ -11,7 +11,8 @@
  *
  * @author marca
  */
-class TLabel extends TField {
+class TLabel extends TField
+{
 
     private $fontSize; // tamanho da fonte
     private $fontFace; // nome da fonte
@@ -23,12 +24,13 @@ class TLabel extends TField {
      * @param S$value = Texto do Label
      */
 
-    public function __construct($value) {
-// atribui o conteúdo do label
+    public function __construct($value)
+    {
+        // atribui o conteúdo do label
         $this->setValue($value);
-// instancia um elemento <font>
+        // instancia um elemento <font>
         $this->tag = new TElement('font');
-// define valores iniciais às propriedades
+        // define valores iniciais às propriedades
         $this->fontSize = '14';
         $this->fontFace = 'Arial';
         $this->fontColor = "black";
@@ -40,7 +42,8 @@ class TLabel extends TField {
      * @param $size = tamanho da fonte
      */
 
-    public function setFontSize($size) {
+    public function setFontSize($size)
+    {
         $this->fontSize = $size;
     }
 
@@ -49,7 +52,8 @@ class TLabel extends TField {
      * define a família da fonte
      * @param Sfont = nome da fonte
      */
-    public function setFontFace($font) {
+    public function setFontFace($font)
+    {
         $this->fontFace = $font;
     }
 
@@ -58,7 +62,8 @@ class TLabel extends TField {
      * define a cor da fonte
      * @param $color = cor da fonte
      */
-    public function setFontColor($color) {
+    public function setFontColor($color)
+    {
 
         $this->fontColor = $color;
     }
@@ -67,15 +72,15 @@ class TLabel extends TField {
      * método show()
      * exibe o widget na tela
      */
-    public function show() {
-// define o estilo da tag
+    public function show()
+    {
+        // define o estilo da tag
         $this->tag->style = "font-family:{$this->fontFace}; " .
-                "color:{$this->fontColor}; " .
-                "font-size:{$this->fontSize}";
-// adiciona o conteúdo à tag
+            "color:{$this->fontColor}; " .
+            "font-size:{$this->fontSize}";
+        // adiciona o conteúdo à tag
         $this->tag->add($this->value);
-// exibe a tag
+        // exibe a tag
         $this->tag->show();
     }
-
 }

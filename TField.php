@@ -7,11 +7,12 @@ include_once 'TElement.php';
 */
 
 /**
-* Description of TField
-*
-* @author marca
-*/
-abstract class TField {
+ * Description of TField
+ *
+ * @author marca
+ */
+abstract class TField
+{
 
     public $name;
     protected $size;
@@ -20,20 +21,21 @@ abstract class TField {
     protected $tag;
 
     /**
-    * método construtor
-    * instancia um campo do formulario
-    * Qparam S$name = nome do campo
-    */
+     * método construtor
+     * instancia um campo do formulario
+     * Qparam S$name = nome do campo
+     */
 
-    public function __construct( $name ) {
+    public function __construct($name)
+    {
         // define algumas características iniciais
-        self::setEditable( true );
+        self::setEditable(true);
         // self::setName( $name );
-        self::setSize( 200 );
+        self::setSize(200);
         // Instancia um estilo CSS chamado tfield
         // que será utilizado pelos campos do formulário
         //! cria uma tag HTML do tipo <input>
-        $this->tag = new TElement( 'input' );
+        $this->tag = new TElement('input');
         //$this->tag->class = 'tfield';
         // classe CSS
         /*
@@ -43,7 +45,8 @@ abstract class TField {
         */
     }
 
-    public function __setName( $name ) {
+    public function __setName($name)
+    {
         $this->name = $name;
     }
 
@@ -52,7 +55,8 @@ abstract class TField {
     * retorna o nome do widget
     */
 
-    public function getName() {
+    public function getName()
+    {
         return $this->name;
     }
 
@@ -62,7 +66,8 @@ abstract class TField {
     * Qparam Svalue = valor do campo
     */
 
-    public function setValue( $value ) {
+    public function setValue($value)
+    {
         $this->value = $value;
     }
 
@@ -70,18 +75,20 @@ abstract class TField {
     * método getValue()
     */
 
-    public function getValue() {
+    public function getValue()
+    {
         //retorna o valor de um campo
         return $this->value;
     }
 
     /**
-    * método setEditable()
-    * define se o campo poderá ser editado
-    * @Gparam Seditable = TRUE ou FALSE
-    */
+     * método setEditable()
+     * define se o campo poderá ser editado
+     * @Gparam Seditable = TRUE ou FALSE
+     */
 
-    public function setEditable( $editable ) {
+    public function setEditable($editable)
+    {
         $this->editable = $editable;
     }
 
@@ -90,7 +97,8 @@ abstract class TField {
     * retorna o valor da propriedade Seditable
     */
 
-    public function getEditable() {
+    public function getEditable()
+    {
         return $this->editable;
     }
 
@@ -101,7 +109,8 @@ abstract class TField {
     * @param $valor = valor da propriedade
     */
 
-    public function setProperty( $name, $value ) {
+    public function setProperty($name, $value)
+    {
         // define uma propriedade de $this->tag
         $this->tag->$name = $value;
     }
@@ -112,8 +121,8 @@ abstract class TField {
     * @param S$size = tamanho em pixels
     */
 
-    public function setSize( $size ) {
+    public function setSize($size)
+    {
         $this->size = $size;
     }
-
 }

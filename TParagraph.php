@@ -32,5 +32,3 @@ class TParagraph extends TElement {
         $this->align = $align;
     }
 }
-
-?>

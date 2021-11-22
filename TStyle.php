@@ -15,6 +15,7 @@ class TStyle
     }
     public function show()
     {
+        
         echo "<style type='text/css' media='screen'>\n";
         echo ".{$this->name}\n";
         echo "{\n";

@@ -76,7 +76,8 @@ class TForm {
      */
     public function setData($object) {
         foreach ($this->fields as $name => $field) {
-            if ($name) { // labels não possuem nome
+            if ($name) { 
+                // labels não possuem nome
                 $field->setValue($object->$name);
             }
         }

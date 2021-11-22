@@ -4,7 +4,8 @@
  * classe TElement
  * classe para abstração de tags HTML
  */
-class TElement {
+class TElement
+{
 
     private $name; //nome da TAG
     private $properties;
@@ -15,7 +16,8 @@ class TElement {
      * instancia uma tag htm]
      * @param Sname = nome da tag
      */
-    public function __construct($name) {
+    public function __construct($name)
+    {
         // define o nome do elemento
         $this->name = $name;
     }
@@ -27,7 +29,8 @@ class TElement {
      * @param $value = valor
      */
 
-    public function __set($name, $value) {
+    public function __set($name, $value)
+    {
         // armazena os valores atribuídos
         // ao array properties
         $this->properties[$name] = $value;
@@ -40,7 +43,8 @@ class TElement {
      * @return nao retorna nada
      */
 
-    public function add($child) {
+    public function add($child)
+    {
         $this->children[] = $child;
     }
 
@@ -49,7 +53,8 @@ class TElement {
      * exibe a tag de abertura na tela
      */
 
-    public function show() {
+    public function show()
+    {
         // abre a tag
         $this->open();
         echo "\n";
@@ -72,7 +77,8 @@ class TElement {
         }
     }
 
-    private function open() {
+    private function open()
+    {
         // exibe a tag de abertura
         echo "<{$this->name}";
         if ($this->properties) {
@@ -84,10 +90,12 @@ class TElement {
         echo '>';
     }
 
-    private function close() {
+    private function close()
+    {
         echo "</{$this->name}>\n";
     }
-    public function closes() {
+    public function closes()
+    {
         echo "</{$this->name}>\n";
-     }
+    }
 }
