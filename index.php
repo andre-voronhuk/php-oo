@@ -24,7 +24,7 @@ $e3->show();
 $e4 = new TStyle('code');
 $e4->font_family = "Consolas";
 $e4->background_color = "#555";
-$e4->color = "#090";
+$e4->color = "#0D0";
 $e4->show();
 
 
