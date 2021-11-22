@@ -3,6 +3,8 @@ include_once 'TStyle.php';
 include_once 'TParagraph.php';
 include_once 'TElement.php';
 include_once 'TEntry.php';
+include_once 'TImagem.php';
+include_once 'TLabel.php';
 
 $estilo1 = new TStyle( 'texto-azul' );
 $estilo1->color = 'rgb(0,100,255)';
@@ -28,18 +30,28 @@ $e4->style = 'padding:1rem;';
 $e4->color = '#0D0';
 $e4->show();
 
-$e5 = new TParagraph( 'Eu sou um TParagraph! ' );
+$e5 = new TParagraph( 'Insira seu nome!  ' );
 
-$e5->style = 'color:#0D0';
+$e5->style = 'color:#0D0;margin:1.5rem;';
 
 $e6 = new TEntry( 'teste' );
-$e6->placeholder = 'Eu Sou um INPUT!';
+$e6->name = 'input1';
+
+$image = new TImage( 'http://s2.glbimg.com/-4kCpgTCm6U_0tFNPBGN4Oim_RQ=/290x217/s2.glbimg.com/xJdItKqUh8K2k6kwGpHglCaP-Vo=/s.glbimg.com/jo/g1/f/original/2013/08/27/neve1.jpg' );
+
+$label = new TLabel( 'Esfriou um pouco' );
+$label->setFontColor( 'rgb( 0, 100, 255 )' ) ;
+
+$image->add( $label );
+//adiciona a legenda na imagem
 
 $contai = new TElement( 'div' );
 
+$contai->add( $image );
 $contai->add( $e5 );
 $contai->add( $e6 );
 $contai->style = 'margin:1.5rem;';
+
 $contai->show();
 
 ?>
@@ -72,9 +84,13 @@ Sou um texto maior!
 </p>
 
 <div class = 'ul'>
-<li> Item 1 da lista</li>
-<li> Item 2 da lista</li>
-<li> Item 3 da lista</li>
+<p> Foram utilizados</p>
+<li> TElement</li>
+<li> TField</li>
+<li> TParagraph</li>
+<li> TImagem ( que usa: TElement )</li>
+<li> TEntry ( que usa: TField/TElement )</li>
+
 </div>
 <br><br>
 

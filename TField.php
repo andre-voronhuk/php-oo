@@ -13,7 +13,7 @@ include_once 'TElement.php';
 */
 abstract class TField {
 
-    protected $name;
+    public $name;
     protected $size;
     protected $value;
     protected $editable;
